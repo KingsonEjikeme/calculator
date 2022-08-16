@@ -91,7 +91,18 @@
             .value.slice(0, -1);
         }
         numberInput(param) {
-          document.getElementById("display").value += param.innerHTML.trim();
+          if (param.innerHTML.trim() == ".") {
+            if (
+              document.getElementById("display").value.split(".").length <= 1
+            ) {
+              document.getElementById("display").value +=
+                param.innerHTML.trim();
+            } else {
+              null;
+            }
+          } else {
+            document.getElementById("display").value += param.innerHTML.trim();
+          }
         }
       }
 
